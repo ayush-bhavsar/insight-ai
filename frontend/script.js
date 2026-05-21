@@ -201,6 +201,10 @@ function initCharts(state) {
     responsive: true,
     maintainAspectRatio: false,
     plugins: {
+      tooltip: {
+        mode: 'index',
+        intersect: false,
+      },
       legend: {
         labels: {
           color: '#dbe7ff',
@@ -210,10 +214,12 @@ function initCharts(state) {
     },
     scales: {
       x: {
+        grid: { display: false },
         ticks: { color: '#8b9bb8' },
-        grid: { color: 'rgba(255,255,255,0.05)' },
       },
       y: {
+        beginAtZero: true,
+        suggestedMax: 100,
         ticks: { color: '#8b9bb8' },
         grid: { color: 'rgba(255,255,255,0.05)' },
       },
@@ -232,6 +238,8 @@ function initCharts(state) {
           backgroundColor: 'rgba(46, 242, 194, 0.14)',
           fill: true,
           tension: 0.35,
+          pointRadius: 0,
+          borderWidth: 2,
         },
       ],
     },
@@ -250,6 +258,8 @@ function initCharts(state) {
           backgroundColor: 'rgba(255, 180, 76, 0.14)',
           fill: true,
           tension: 0.35,
+          pointRadius: 0,
+          borderWidth: 2,
         },
       ],
     },

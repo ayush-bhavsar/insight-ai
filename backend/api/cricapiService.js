@@ -64,7 +64,9 @@ async function getCurrentIPLMatch() {
       ...matchInfo,
     };
   } catch (error) {
-    console.error('Error fetching IPL match:', error.message);
+    if (error?.message && !error.message.includes('fetch failed')) {
+      console.warn('Error fetching IPL match:', error.message);
+    }
     return null;
   }
 }
